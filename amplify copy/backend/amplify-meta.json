@@ -1,0 +1,96 @@
+{
+    "providers": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-ravi-pwa-dev-183759-authRole",
+            "UnauthRoleArn": "arn:aws:iam::731577846314:role/amplify-ravi-pwa-dev-183759-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::731577846314:role/amplify-ravi-pwa-dev-183759-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "amplify-ravi-pwa-dev-183759-deployment",
+            "UnauthRoleName": "amplify-ravi-pwa-dev-183759-unauthRole",
+            "StackName": "amplify-ravi-pwa-dev-183759",
+            "StackId": "arn:aws:cloudformation:us-east-1:731577846314:stack/amplify-ravi-pwa-dev-183759/b50b71d0-3eaa-11ea-9dd7-12217e59f19f",
+            "AmplifyAppId": "d21jsp29gp9egz"
+        }
+    },
+    "api": {
+        "ravipwa": {
+            "service": "AppSync",
+            "providerPlugin": "awscloudformation",
+            "output": {
+                "authConfig": {
+                    "additionalAuthenticationProviders": [],
+                    "defaultAuthentication": {
+                        "authenticationType": "API_KEY",
+                        "apiKeyConfig": {
+                            "description": "graphql api for ravipwa",
+                            "apiKeyExpirationDays": "365"
+                        }
+                    }
+                },
+                "GraphQLAPIIdOutput": "oelpl5nn2zaixjkjewcyxgvepe",
+                "GraphQLAPIEndpointOutput": "https://hnvomfuyfjdghc27tf4hr4ac7a.appsync-api.us-east-1.amazonaws.com/graphql",
+                "GraphQLAPIKeyOutput": "da2-fc3okipwsbdzhebiwumt7zgjkm"
+            },
+            "providerMetadata": {
+                "s3TemplateURL": "https://s3.amazonaws.com/amplify-ravi-pwa-dev-183759-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+                "logicalId": "apiravipwa"
+            },
+            "lastPushTimeStamp": "2020-01-27T05:28:00.536Z",
+            "lastPushDirHash": "Rc12BLkodeF+3fefpgc77KAyMuQ="
+        }
+    },
+    "hosting": {
+        "S3AndCloudFront": {
+            "service": "S3AndCloudFront",
+            "providerPlugin": "awscloudformation",
+            "providerMetadata": {
+                "s3TemplateURL": "https://s3.amazonaws.com/amplify-ravi-pwa-dev-183759-deployment/amplify-cfn-templates/hosting/template.json",
+                "logicalId": "hostingS3AndCloudFront"
+            },
+            "lastPushTimeStamp": "2020-01-27T05:28:00.544Z",
+            "output": {
+                "CloudFrontSecureURL": "https://d2z3ea0uwzo2re.cloudfront.net",
+                "S3BucketSecureURL": "https://ravi-pwa-20200113113120-hostingbucket-dev.s3.amazonaws.com",
+                "CloudFrontOriginAccessIdentity": "E203VHE8G4CR0W",
+                "WebsiteURL": "http://ravi-pwa-20200113113120-hostingbucket-dev.s3-website-us-east-1.amazonaws.com",
+                "CloudFrontDistributionID": "E104TAB4LMM391",
+                "Region": "us-east-1",
+                "HostingBucketName": "ravi-pwa-20200113113120-hostingbucket-dev",
+                "CloudFrontDomainName": "d2z3ea0uwzo2re.cloudfront.net"
+            },
+            "lastPushDirHash": "gOR/0fH8GfYX13rRUYpSCEMtIWM="
+        }
+    },
+    "function": {
+        "ravipwa0030182b": {
+            "service": "Lambda",
+            "providerPlugin": "awscloudformation",
+            "build": true,
+            "dependsOn": [
+                {
+                    "category": "api",
+                    "resourceName": "ravipwa",
+                    "attributes": [
+                        "GraphQLAPIIdOutput",
+                        "GraphQLAPIEndpointOutput"
+                    ]
+                }
+            ],
+            "lastBuildTimeStamp": "2020-01-24T13:19:51.073Z",
+            "lastPackageTimeStamp": "2020-01-24T13:20:01.234Z",
+            "distZipFilename": "ravipwa0030182b-71416754646856524135-build.zip",
+            "providerMetadata": {
+                "s3TemplateURL": "https://s3.amazonaws.com/amplify-ravi-pwa-dev-183759-deployment/amplify-cfn-templates/function/ravipwa0030182b-cloudformation-template.json",
+                "logicalId": "functionravipwa0030182b"
+            },
+            "lastPushTimeStamp": "2020-01-27T05:28:00.546Z",
+            "output": {
+                "Region": "us-east-1",
+                "Arn": "arn:aws:lambda:us-east-1:731577846314:function:pushNotification-dev",
+                "Name": "pushNotification-dev",
+                "LambdaExecutionRole": "ravipwaLambdaRole5b7f41ef-dev"
+            },
+            "lastPushDirHash": "aSUF6x+f2Y6ojDXg4rCuK5/gfcU="
+        }
+    }
+}

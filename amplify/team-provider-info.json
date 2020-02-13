@@ -1,0 +1,21 @@
+{
+    "new": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-ravi-pwa-new-105944-authRole",
+            "UnauthRoleArn": "arn:aws:iam::731577846314:role/amplify-ravi-pwa-new-105944-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::731577846314:role/amplify-ravi-pwa-new-105944-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "amplify-ravi-pwa-new-105944-deployment",
+            "UnauthRoleName": "amplify-ravi-pwa-new-105944-unauthRole",
+            "StackName": "amplify-ravi-pwa-new-105944",
+            "StackId": "arn:aws:cloudformation:us-east-1:731577846314:stack/amplify-ravi-pwa-new-105944/309ed7c0-40c6-11ea-a871-1217092af407",
+            "AmplifyAppId": "d1v5ouoslsfw3h"
+        },
+        "categories": {
+            "function": {
+                "ravipwa0030182b": {},
+                "ravipwa": {}
+            }
+        }
+    }
+}

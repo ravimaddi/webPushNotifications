@@ -1,26 +1,34 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Amplify from 'aws-amplify';
+import {BrowserRouter,Link,Route} from 'react-router-dom'
+import aws_exports from './aws-exports';
+import Organizer from './components/Organizer'
+import Attendee from './components/Attendee'
+import Welcome from './components/Welcome'
 
-function App() {
+
+Amplify.configure(aws_exports);
+Amplify.Logger.LOG_LEVEL = 'INFO';
+
+
+class  App extends React.Component {
+ 
+  render(){
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+    <h1>Welcome</h1>
+    <BrowserRouter>
+    <Link to="/organizer">Organizer</Link> |
+    <Link to="/attendee"> Attendee</Link> |
+    <Link to="/welcome"> Welcome</Link>
+   
+    <Route path="/organizer" component={Organizer}/>
+    <Route path="/attendee" component={Attendee}/>
+    <Route path="/welcome"  component={Welcome}/>
+    </BrowserRouter>
     </div>
   );
+  }
 }
 
 export default App;

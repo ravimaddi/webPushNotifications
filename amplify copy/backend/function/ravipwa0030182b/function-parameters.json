@@ -1,0 +1,12 @@
+{
+    "permissions": {
+        "api": {
+            "ravipwa": [
+                "create",
+                "read",
+                "update",
+                "delete"
+            ]
+        }
+    }
+}

@@ -1,0 +1,30 @@
+
+
+type User @model  {
+    id:ID!
+    name:String!
+    role:String!
+    messages:[Message] @connection
+
+}
+
+type Keys{
+    auth:String
+    p256dh:String
+}
+
+type BrowserSub @model {
+    endpoint: String
+    expirationTime: String
+    keys: Keys
+}
+
+type Message  @model  {
+    text:String
+}
+
+
+
+type Mutation {
+    lambdaTrigger(msg:String):String @function(name: "pushNotification-dev")
+}
